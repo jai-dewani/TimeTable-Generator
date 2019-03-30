@@ -5,11 +5,14 @@ class TimeTable{
 	int noOfClassesp[];
 	// Number of classes
 	static int n = 10;
+	//Random Genrator
+	static Random random;
 
 	TimeTable(){
 		table = new String[6][8];
 		subjects = new String[n][2];
 		noOfClassesp = new int[n];
+		random = new Random();
 	}
 	void checkTotalHours(){
 		int sum = 0;
@@ -19,6 +22,12 @@ class TimeTable{
 		if(sum>48){
 			System.out.println("No of total hours exced the limit.");
 		}
+	}
+	static genrateRandom(int min, int max){
+		return random.nextInt((max-min)+1)+min;
+	}
+	void GenrateTable(){
+		
 	}
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
